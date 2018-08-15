@@ -2,15 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Navbar from '../components/Navbar'
-import './all.sass'
+import Navigation from '../components/Navigation'
 
 const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
-    <Navbar />
-    <div>{children()}</div>
-  </div>
+  <>
+    <Helmet title="Luke M. Willis" />
+    <Navigation />
+    <main>{children()}</main>
+  </>
 )
 
 TemplateWrapper.propTypes = {
