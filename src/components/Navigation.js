@@ -1,15 +1,10 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from "react";
+import Link from "gatsby-link";
 
 const Navigation = () => (
   <nav>
-    <Link to="/about">
-      About
-    </Link>
-    <Link to="/products">
-      Products
-    </Link>
+    <Link to="/about">About</Link>
   </nav>
-)
+);
 
-export default Navigation
+export default Navigation;

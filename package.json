@@ -1,21 +1,23 @@
 {
-  "name": "lukemwillis.com",
-  "description": "Static source for lukemwillis.com",
+  "name": "lukewillis.com",
+  "description": "Static source for lukewillis.com",
   "version": "1.1.3",
-  "author": "lukemwillis",
+  "author": "Luke Willis",
   "dependencies": {
-    "gatsby": "^1.9.277",
-    "gatsby-link": "^1.6.46",
-    "gatsby-plugin-netlify": "^1.0.19",
-    "gatsby-plugin-netlify-cms": "^1.0.12",
-    "gatsby-plugin-react-helmet": "^2.0.11",
-    "gatsby-remark-images": "^1.5.67",
-    "gatsby-source-filesystem": "^1.5.39",
-    "gatsby-transformer-remark": "^1.7.44",
-    "netlify-cms": "^1.7.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-helmet": "^5.2.0"
+    "gatsby": "^2.16.2",
+    "gatsby-link": "^2.2.22",
+    "gatsby-plugin-netlify": "^2.1.21",
+    "gatsby-plugin-netlify-cms": "^4.1.25",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-remark-images": "^3.1.28",
+    "gatsby-source-filesystem": "^2.1.33",
+    "gatsby-transformer-remark": "^2.6.30",
+    "netlify-cms": "^2.9.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.4.0"
   },
   "keywords": [
     "gatsby"
@@ -31,6 +33,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.14.2"
+    "prettier": "^1.18.2"
   }
 }

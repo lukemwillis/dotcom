@@ -4,6 +4,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -21,9 +22,17 @@ module.exports = {
     {
       resolve: "gatsby-transformer-remark",
       options: {
-        plugins: []
+        plugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 700
+            }
+          }
+        ]
       }
     },
+    "gatsby-plugin-netlify-cms",
     "gatsby-plugin-netlify" // make sure to keep it last in the array
   ]
 };
