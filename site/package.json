@@ -1,0 +1,31 @@
+{
+  "name": "lukewillis.com",
+  "version": "1.2.0",
+  "author": "Luke Willis",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "gatsby": "^2.16.2",
+    "gatsby-link": "^2.2.22",
+    "gatsby-plugin-netlify": "^2.1.21",
+    "gatsby-plugin-netlify-cms": "^4.1.25",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-remark-images": "^3.1.28",
+    "gatsby-source-filesystem": "^2.1.33",
+    "gatsby-transformer-remark": "^2.6.30",
+    "netlify-cms": "^2.9.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.4.0",
+    "prettier": "^1.18.2"
+  }
+}
