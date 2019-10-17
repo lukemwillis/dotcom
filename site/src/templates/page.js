@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Content, { HTMLContent } from "../components/Content";
+import { Content, HTMLContent } from "theme";
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
+export const PageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
     <section>
+      <Helmet title={title} />
       <h2>{title}</h2>
       <PageContent className="content" content={content} />
     </section>
@@ -19,7 +20,7 @@ AboutPageTemplate.propTypes = {
   contentComponent: PropTypes.func
 };
 
-const AboutPage = ({ data }) => {
+const Page = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
@@ -31,15 +32,16 @@ const AboutPage = ({ data }) => {
   );
 };
 
-AboutPage.propTypes = {
+Page.propTypes = {
   data: PropTypes.object.isRequired
 };
 
-export default AboutPage;
+export default Page;
 
 export const pageQuery = graphql`
-  query AboutPage($id: String!) {
+  query Page($id: String!) {
     markdownRemark(id: { eq: $id }) {
+      html
       frontmatter {
         title
       }

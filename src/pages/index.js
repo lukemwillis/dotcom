@@ -1,75 +1,21 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Link from "gatsby-link";
+import React from "react"
+import { Link } from "gatsby"
 
-export default class IndexPage extends React.Component {
-  render() {
-    const {
-      data: {
-        allMarkdownRemark: { edges: posts }
-      }
-    } = this.props;
+import Layout from "../components/layout"
+import Image from "../components/image"
+import SEO from "../components/seo"
 
-    return (
-      <section>
-        <h1>Latest Stories</h1>
-        {posts.map(({ node: post }) => (
-          <div
-            style={{ border: "1px solid #eaecee", padding: "2em 4em" }}
-            key={post.id}
-          >
-            <p>
-              <Link className="has-text-primary" to={post.fields.slug}>
-                {post.frontmatter.title}
-              </Link>
-              <span> &bull; </span>
-              <small>{post.frontmatter.date}</small>
-            </p>
-            <p>
-              {post.excerpt}
-              <br />
-              <br />
-              <Link className="button is-small" to={post.fields.slug}>
-                Keep Reading →
-              </Link>
-            </p>
-          </div>
-        ))}
-      </section>
-    );
-  }
-}
+const IndexPage = () => (
+  <Layout>
+    <SEO title="Home" />
+    <h1>Hi people</h1>
+    <p>Welcome to your new Gatsby site.</p>
+    <p>Now go build something great.</p>
+    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+      <Image />
+    </div>
+    <Link to="/page-2/">Go to page 2</Link>
+  </Layout>
+)
 
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array
-    })
-  })
-};
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-    ) {
-      edges {
-        node {
-          excerpt
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            featureImage
-            featureImageAlt
-            templateKey
-            date(formatString: "MMMM DD, YYYY")
-          }
-        }
-      }
-    }
-  }
-`;
+export default IndexPage
