@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 const Bubble = ({ right = false, link = null, children }) => {
   const foreground = link ? "#fff" : "#000"
   const background = link ? "#555" : "#eee"
+  const shadow = link ? "#eee" : "#555"
   return (
     <div
       style={{
@@ -20,6 +21,7 @@ const Bubble = ({ right = false, link = null, children }) => {
           borderRadius: `1em 1em ${right ? "0 1em" : "1em 0"}`,
           padding: `.5em`,
           marginBottom: "1em",
+          boxShadow: `0 .25em 0 0 ${shadow}`,
         }}
       >
         {link ? (
@@ -32,9 +34,9 @@ const Bubble = ({ right = false, link = null, children }) => {
         <div
           style={{
             position: "absolute",
-            bottom: "-1em",
+            bottom: "-.5em",
             width: 0,
-            borderWidth: ".5em",
+            borderWidth: ".25em",
             borderStyle: "solid",
             borderColor: right
               ? `${background} ${background} transparent transparent`

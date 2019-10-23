@@ -8,11 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import SEO from "./seo"
-import Footer from "./footer"
+import Footer from "../components/footer"
 import "./layout.css"
 
-const Layout = ({ title, children, image }) => {
+const Layout = ({ children, image }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -39,10 +38,9 @@ const Layout = ({ title, children, image }) => {
         <main
           style={{
             width: "100%",
-            padding: "1em",
+            padding: "2em 1em",
           }}
         >
-          <SEO title={title} />
           {children}
         </main>
         <div

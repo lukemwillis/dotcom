@@ -1,11 +1,12 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import SEO from "../components/seo"
 import Image from "../components/image"
 import Bubble from "../components/bubble"
 
 const IndexPage = () => (
-  <Layout image={<Image />}>
+  <>
+    <SEO />
     <Bubble>
       <h1>Hi! I'm Luke.</h1>
       <p>
@@ -20,7 +21,18 @@ const IndexPage = () => (
     <Bubble right link="/x">
       Go to 404
     </Bubble>
-  </Layout>
+    <div
+      style={{
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        width: "10em",
+        zIndex: "-1",
+      }}
+    >
+      <Image imageKey="astronaut" />
+    </div>
+  </>
 )
 
 export default IndexPage
