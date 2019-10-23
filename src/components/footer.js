@@ -2,18 +2,21 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
+const Footer = ({ siteTitle }) => (
+  <footer
     style={{
       background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      color: `white`,
+      height: `100vh`,
+      position: `sticky`,
+      bottom: "calc(1em - 100vh)",
     }}
   >
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        maxWidth: "40em",
+        padding: "1em",
       }}
     >
       <h1 style={{ margin: 0 }}>
@@ -27,16 +30,17 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <p>© {new Date().getFullYear()}, Luke Willis</p>
     </div>
-  </header>
+  </footer>
 )
 
-Header.propTypes = {
+Footer.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
+Footer.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+export default Footer

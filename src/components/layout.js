@@ -8,11 +8,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import SEO from "./seo"
+import Footer from "./footer"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ title, children, image }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,18 +25,39 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
+          maxWidth: "40em",
+          minHeight: "100vh",
+          position: "relative",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-end",
         }}
       >
-        <main>{children}</main>
-        <footer>© {new Date().getFullYear()}, Luke Willis</footer>
+        <main
+          style={{
+            width: "100%",
+            padding: "1em",
+          }}
+        >
+          <SEO title={title} />
+          {children}
+        </main>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "10em",
+            zIndex: "-1",
+          }}
+        >
+          {image}
+        </div>
       </div>
+      <Footer siteTitle={data.site.siteMetadata.title} />
     </>
   )
 }
