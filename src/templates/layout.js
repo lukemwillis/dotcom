@@ -10,10 +10,9 @@ import "./layout.css"
 const Layout = ({
   children,
   pageContext: {
-    frontmatter: { image, links },
+    frontmatter: { title, image, links },
   },
 }) => {
-  console.log(image, links)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -43,24 +42,27 @@ const Layout = ({
             padding: "2em 1em",
           }}
         >
-          <SEO />
+          <SEO title={title} />
           <Bubble>{children}</Bubble>
-          {links.map(({ text, link }) => (
-            <Bubble key={link} right link={link}>
-              {text}
-            </Bubble>
-          ))}
-          <div
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              width: "10em",
-              zIndex: "-1",
-            }}
-          >
-            <Image imageKey={"astronaut"} />
-          </div>
+          {links &&
+            links.map(({ text, link }) => (
+              <Bubble key={link} right link={link}>
+                {text}
+              </Bubble>
+            ))}
+          {image && (
+            <div
+              style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                width: "10em",
+                zIndex: "-1",
+              }}
+            >
+              <Image imageKey={image} />
+            </div>
+          )}
         </main>
       </div>
       <Footer siteTitle={data.site.siteMetadata.title} />

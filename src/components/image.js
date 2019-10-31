@@ -15,8 +15,6 @@ const Image = ({ imageKey }) => {
     }
   `)
 
-  console.log(imageKey)
-
   return <Img fluid={data[imageKey].childImageSharp.fluid} />
 }
 
