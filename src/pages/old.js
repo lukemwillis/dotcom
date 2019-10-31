@@ -16,10 +16,13 @@ const IndexPage = () => (
       <p>Any questions?</p>
     </Bubble>
     <Bubble right link="/page-2/">
-      Go to page 2
+      Just one... who are you?
     </Bubble>
     <Bubble right link="/x">
-      Go to 404
+      What's an adaptive product?
+    </Bubble>
+    <Bubble right link="/x">
+      Read any good books lately?
     </Bubble>
     <div
       style={{

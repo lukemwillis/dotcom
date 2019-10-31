@@ -7,16 +7,32 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-layout`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        component: `${__dirname}/src/layouts/index.js`,
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-layout`,
+    //   options: {
+    //     component: `${__dirname}/src/layouts/index.js`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          // pages: require.resolve("./src/templates/layout.js"),
+          default: require.resolve("./src/templates/layout.js"),
+        },
       },
     },
     `gatsby-transformer-sharp`,

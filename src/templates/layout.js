@@ -1,17 +1,19 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import SEO from "../components/seo"
+import Image from "../components/image"
+import Bubble from "../components/bubble"
 import Footer from "../components/footer"
 import "./layout.css"
 
-const Layout = ({ children, image }) => {
+const Layout = ({
+  children,
+  pageContext: {
+    frontmatter: { image, links },
+  },
+}) => {
+  console.log(image, links)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -41,19 +43,25 @@ const Layout = ({ children, image }) => {
             padding: "2em 1em",
           }}
         >
-          {children}
+          <SEO />
+          <Bubble>{children}</Bubble>
+          {links.map(({ text, link }) => (
+            <Bubble key={link} right link={link}>
+              {text}
+            </Bubble>
+          ))}
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: "10em",
+              zIndex: "-1",
+            }}
+          >
+            <Image imageKey={"astronaut"} />
+          </div>
         </main>
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            width: "10em",
-            zIndex: "-1",
-          }}
-        >
-          {image}
-        </div>
       </div>
       <Footer siteTitle={data.site.siteMetadata.title} />
     </>
