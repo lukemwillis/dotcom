@@ -11,13 +11,7 @@ import Footer from "../components/footer"
 import "./layout.css"
 import { motion, AnimatePresence } from "framer-motion"
 
-const Layout = ({
-  children,
-  pageContext: {
-    frontmatter: { title, image, links },
-  },
-  location,
-}) => {
+const Layout = ({ children, pageContext, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -30,7 +24,7 @@ const Layout = ({
 
   return (
     <>
-      <SEO title={title} />
+      <SEO title={pageContext.frontmatter && pageContext.frontmatter.title} />
       <div
         style={{
           margin: `0 auto`,
@@ -51,8 +45,10 @@ const Layout = ({
             }}
           >
             <Bubble>{children}</Bubble>
-            <Responses links={links} />
-            {image && (
+            <Responses
+              links={pageContext.frontmatter && pageContext.frontmatter.links}
+            />
+            {pageContext.frontmatter && pageContext.frontmatter.image && (
               <motion.div
                 initial={{ opacity: 0, y: "10em" }}
                 animate={{
@@ -74,7 +70,7 @@ const Layout = ({
                   zIndex: "-1",
                 }}
               >
-                <Image imageKey={image} />
+                <Image imageKey={pageContext.frontmatter.image} />
               </motion.div>
             )}
           </main>
