@@ -14,9 +14,9 @@ const Responses = ({ links = null }) => {
       }}
     >
       {links &&
-        links.map(({ text, link }) => (
+        links.map(({ text, link }, index) => (
           <Link
-            key={link}
+            key={index}
             to={link}
             style={{
               color: "white",
@@ -24,9 +24,24 @@ const Responses = ({ links = null }) => {
               marginTop: `1em`,
             }}
           >
-            <motion.span
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: index * 0.01,
+                },
+              }}
+              exit={{
+                opacity: 0,
+                y: -100,
+              }}
               whileHover={{
-                scale: 1.5,
+                scale: 1.1,
+              }}
+              whileTap={{
+                scale: 0.9,
               }}
               style={{
                 background: "rebeccapurple",
@@ -36,7 +51,7 @@ const Responses = ({ links = null }) => {
               }}
             >
               {text}
-            </motion.span>
+            </motion.div>
           </Link>
         ))}
     </div>

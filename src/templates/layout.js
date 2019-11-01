@@ -9,12 +9,14 @@ import Responses from "../components/responses"
 import Footer from "../components/footer"
 
 import "./layout.css"
+import { motion, AnimatePresence } from "framer-motion"
 
 const Layout = ({
   children,
   pageContext: {
     frontmatter: { title, image, links },
   },
+  location,
 }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -40,28 +42,43 @@ const Layout = ({
           justifyContent: "flex-end",
         }}
       >
-        <main
-          style={{
-            width: "100%",
-            padding: "2em 1em",
-          }}
-        >
-          <Bubble>{children}</Bubble>
-          <Responses links={links} />
-          {image && (
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                width: "10em",
-                zIndex: "-1",
-              }}
-            >
-              <Image imageKey={image} />
-            </div>
-          )}
-        </main>
+        <AnimatePresence exitBeforeEnter>
+          <main
+            key={location.pathname}
+            style={{
+              width: "100%",
+              padding: "2em 1em",
+            }}
+          >
+            <Bubble>{children}</Bubble>
+            <Responses links={links} />
+            {image && (
+              <motion.div
+                initial={{ opacity: 0, y: "10em" }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                exit={{
+                  opacity: 0,
+                  y: "10em",
+                }}
+                transition={{
+                  type: "tween",
+                }}
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  width: "10em",
+                  zIndex: "-1",
+                }}
+              >
+                <Image imageKey={image} />
+              </motion.div>
+            )}
+          </main>
+        </AnimatePresence>
       </div>
       <Footer siteTitle={data.site.siteMetadata.title} />
     </>
