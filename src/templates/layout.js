@@ -1,10 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+
 import SEO from "../components/seo"
 import Image from "../components/image"
 import Bubble from "../components/bubble"
+import Responses from "../components/responses"
 import Footer from "../components/footer"
+
 import "./layout.css"
 
 const Layout = ({
@@ -25,6 +28,7 @@ const Layout = ({
 
   return (
     <>
+      <SEO title={title} />
       <div
         style={{
           margin: `0 auto`,
@@ -42,14 +46,8 @@ const Layout = ({
             padding: "2em 1em",
           }}
         >
-          <SEO title={title} />
           <Bubble>{children}</Bubble>
-          {links &&
-            links.map(({ text, link }) => (
-              <Bubble key={link} right link={link}>
-                {text}
-              </Bubble>
-            ))}
+          <Responses links={links} />
           {image && (
             <div
               style={{
