@@ -1,19 +1,23 @@
 ---
 image: astronaut
 links: [
-    { link: "/page-2/", text: "Go to page 2" },
-    { link: "/x", text: "Go to 404" },
-    { link: "/x", text: "Go to 404" },
-    { link: "/x", text: "Go to a really long url for a change why not?" },
-    { link: "/x", text: "Go to 404" },
-    { link: "/x", text: "Go to 404" },
-    { link: "/x", text: "Go to 404" },
-    { link: "/x", text: "Go to 404" },
-    { link: "/x", text: "Go to 404" },
+    { link: "/page-2/", text: "Take me to page 2" },
+    { link: "/quotes", text: "Do you have any favorite quotes?" },
 ]
 ---
 
-<h1>Hi! I'm Luke.</h1>
+import { motion } from "framer-motion"
+
+<h1>
+    <motion.div
+        initial={{ y: "10em" }}
+        animate={{ y: 0 }}
+        style={{display: "inline-block"}}
+    >
+        Hi!
+    </motion.div>{" "}
+I'm Luke.
+</h1>
 <p>
 I help people build adaptive products that real people actually want to
 use.
