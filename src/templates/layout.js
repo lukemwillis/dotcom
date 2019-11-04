@@ -59,9 +59,6 @@ const Layout = ({ children, pageContext, location }) => {
                   opacity: 0,
                   y: "10em",
                 }}
-                transition={{
-                  type: "tween",
-                }}
                 style={{
                   position: "absolute",
                   bottom: 0,

@@ -30,6 +30,10 @@ const Footer = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <p>
+        The opinions expressed herein are my own personal opinions and do not
+        represent my employer's view in any way.
+      </p>
       <p>© {new Date().getFullYear()}, Luke Willis</p>
     </div>
   </footer>
