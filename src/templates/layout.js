@@ -71,7 +71,7 @@ const Layout = ({ children, pageContext, location }) => {
                   zIndex: "-1",
                 }}
               >
-                <Image imageKey={pageContext.frontmatter.image} />
+                <Image filename={pageContext.frontmatter.image} />
               </motion.div>
             )}
           </main>
