@@ -66,7 +66,7 @@ const Layout = ({ children, pageContext, location }) => {
                 style={{
                   position: "absolute",
                   bottom: 0,
-                  left: 0,
+                  left: "-3em",
                   width: "15em",
                   zIndex: "-1",
                 }}
