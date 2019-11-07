@@ -20,9 +20,7 @@ const Image = ({ filename }) => {
     node => node.fluid.originalName === filename
   )
 
-  return image ? (
-    <Img fluid={image.fluid} fadeIn={false} alt={filename} />
-  ) : null
+  return image && <Img fluid={image.fluid} alt={filename} />
 }
 
 export default Image
