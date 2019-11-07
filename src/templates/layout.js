@@ -50,24 +50,28 @@ const Layout = ({ children, pageContext, location }) => {
             />
             {pageContext.frontmatter && pageContext.frontmatter.image && (
               <motion.div
-                initial={{ opacity: 0, y: "10em" }}
+                initial={{ opacity: 0, y: "15em" }}
                 animate={{
                   opacity: 1,
                   y: 0,
                 }}
                 exit={{
                   opacity: 0,
-                  y: "10em",
+                  y: "15em",
+                }}
+                transition={{
+                  type: "tween",
+                  duration: 0.2,
                 }}
                 style={{
                   position: "absolute",
                   bottom: 0,
                   left: 0,
-                  width: "10em",
+                  width: "15em",
                   zIndex: "-1",
                 }}
               >
-                <Image imageKey={pageContext.frontmatter.image} />
+                <Image filename={pageContext.frontmatter.image} />
               </motion.div>
             )}
           </main>

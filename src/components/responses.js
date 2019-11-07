@@ -17,9 +17,11 @@ class Responses extends Component {
         style={{
           display: "flex",
           flexDirection: "row",
+          alignContent: "flex-start",
           justifyContent: "flex-end",
           flexWrap: "wrap",
-          marginLeft: "10em",
+          marginLeft: "15em",
+          minHeight: "10em",
         }}
       >
         {this.props.links &&
@@ -35,7 +37,7 @@ class Responses extends Component {
               onClick={this.onLinkClick}
             >
               <motion.div
-                initial={{ opacity: 0, y: "10em" }}
+                initial={{ opacity: 0, y: "15em" }}
                 animate={{
                   opacity: 1,
                   y: 0,
@@ -45,7 +47,7 @@ class Responses extends Component {
                 }}
                 exit={{
                   opacity: 0,
-                  y: this.state.clicked === text ? "-10em" : "10em",
+                  y: this.state.clicked === text ? "-15em" : "15em",
                   transition: {
                     type: "tween",
                   },
