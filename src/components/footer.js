@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Contact from "./contact"
 
 const Footer = ({ siteTitle }) => (
   <footer
@@ -30,6 +31,7 @@ const Footer = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <Contact />
       <p>
         The opinions expressed herein are my own personal opinions and do not
         represent my employer's view in any way.
