@@ -2,7 +2,7 @@ import React from "react"
 
 import Form from "./form"
 import Submit from "./form/submit"
-import Input from "./form/input"
+import Input from "./form/emailInput"
 import Textarea from "./form/textarea"
 
 const Contact = () => (
@@ -16,12 +16,13 @@ const Contact = () => (
     <Textarea
       label="Message"
       name="message"
+      required
       labelStyle={{ gridArea: "message", borderRadius: "1em 1em 0 0" }}
     />
     <Input
       label="Your Email"
-      type="email"
       name="email"
+      required
       labelStyle={{ gridArea: "email", borderRadius: "0 0 0 1em" }}
     />
     <Submit

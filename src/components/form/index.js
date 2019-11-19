@@ -6,6 +6,7 @@ const Form = ({ children, style }) => (
     method="POST"
     netlify-honeypot="bot-field"
     data-netlify="true"
+    action="/thanks"
     style={{
       width: "100%",
       margin: "1rem 0",
