@@ -10,6 +10,7 @@ const GenericInput = ({
   InputComponent,
   label,
   name,
+  required,
   labelStyle,
   inputStyle,
   inputProps,
@@ -49,6 +50,7 @@ const GenericInput = ({
         name={name}
         onFocus={toggleFocus}
         onBlur={toggleFocus}
+        required={required}
         style={{
           width: "100%",
           height: "100%",
