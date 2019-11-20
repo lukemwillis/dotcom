@@ -2,13 +2,14 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Contact from "./contact"
+import SocialIcons from "./socialIcons"
 
 const Footer = ({ siteTitle }) => (
   <footer
     style={{
       background: `rebeccapurple`,
       color: `white`,
-      height: `100vh`,
+      height: "100vh",
       position: `sticky`,
       bottom: "calc(1em - 100vh)",
     }}
@@ -20,17 +21,20 @@ const Footer = ({ siteTitle }) => (
         padding: "1em",
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h1 style={{ margin: 0 }}>
+          <Link
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            {siteTitle}
+          </Link>
+        </h1>
+        <SocialIcons />
+      </div>
       <Contact />
       <p>
         The opinions expressed herein are my own personal opinions and do not

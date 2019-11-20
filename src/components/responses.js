@@ -20,8 +20,8 @@ class Responses extends Component {
           alignContent: "flex-start",
           justifyContent: "flex-end",
           flexWrap: "wrap",
-          marginLeft: "15em",
-          minHeight: "15em",
+          marginLeft: "7em",
+          minHeight: "11em",
         }}
       >
         {this.props.links &&
