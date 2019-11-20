@@ -3,6 +3,8 @@ module.exports = {
     title: `Luke Willis`,
     description: `Just some dude`,
     author: `@lukemwillis`,
+    linkedinUsername: "lukemwillis",
+    stackOverflowUserId: "2479481",
   },
   plugins: [
     {
