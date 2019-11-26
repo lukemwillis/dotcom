@@ -1,25 +1,26 @@
 ---
 image: luke.png
-links: [
-    { link: "/page-2/", text: "Take me to page 2" },
-    { link: "/quotes", text: "Do you have any favorite quotes?" },
-]
+links:
+  [
+    { link: "/now", text: "What are you working on?" },
+    { link: "/contact", text: "I have a different question..." },
+  ]
 ---
 
 import { motion } from "framer-motion"
 
 <h1>
-    <motion.div
-        initial={{ y: "15em" }}
-        animate={{ y: 0 }}
-        style={{display: "inline-block"}}
-    >
-        Hi!
-    </motion.div>{" "}
-I'm Luke.
+  <motion.div
+    initial={{ y: "15em" }}
+    animate={{ y: 0 }}
+    style={{ display: "inline-block" }}
+  >
+    Hi!
+  </motion.div>{" "}
+  I'm Luke.
 </h1>
-<p>
+
 I help people build adaptive products that real people actually want to
 use.
-</p>
-<p>Any questions?</p>
+
+Any questions?

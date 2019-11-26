@@ -21,7 +21,7 @@ class Responses extends Component {
           justifyContent: "flex-end",
           flexWrap: "wrap",
           marginLeft: "7em",
-          minHeight: "11em",
+          minHeight: "12em",
         }}
       >
         {this.props.links &&
