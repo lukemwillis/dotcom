@@ -23,15 +23,14 @@ const SocialIcons = () => {
     <div>
       <OutboundLink
         href={`https://linkedin.com/in/${siteMetadata.linkedinUsername}`}
-        style={{ color: "white" }}
       >
-        <FaLinkedinIn size="2.25rem" />
+        <FaLinkedinIn size="1.5rem" />
       </OutboundLink>
       <OutboundLink
         href={`https://stackoverflow.com/users/story/${siteMetadata.stackOverflowUserId}`}
-        style={{ marginLeft: "0.5em", color: "white" }}
+        style={{ marginLeft: "0.5em" }}
       >
-        <FaStackOverflow size="2.25rem" />
+        <FaStackOverflow size="1.5rem" />
       </OutboundLink>
     </div>
   )

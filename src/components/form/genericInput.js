@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { motion } from "framer-motion"
 
 const variants = {
-  small: { fontSize: "1em" },
+  small: { fontSize: ".9em" },
   large: { fontSize: "1.5em" },
 }
 
@@ -25,8 +25,13 @@ const GenericInput = ({
     <label
       style={{
         position: "relative",
-        padding: "0.5em",
-        background: "white",
+        padding: "1em",
+        borderStyle: "solid",
+        borderWidth: ".2em",
+        borderColor: "white",
+        borderRadius: "1em",
+        display: "block",
+        marginBottom: "1em",
         ...labelStyle,
       }}
     >
@@ -38,9 +43,6 @@ const GenericInput = ({
           pointerEvents: "none",
           position: "absolute",
           top: ".5em",
-          left: ".5em",
-          background: "white",
-          color: "rebeccapurple",
           fontWeight: "900",
         }}
       >
@@ -53,9 +55,7 @@ const GenericInput = ({
         required={required}
         style={{
           width: "100%",
-          height: "100%",
-          borderWidth: 0,
-          paddingTop: "1.5em",
+          border: "none",
           ...inputStyle,
         }}
         {...inputProps}

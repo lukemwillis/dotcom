@@ -1,83 +1,78 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import SEO from "../components/seo"
-import Image from "../components/image"
-import Bubble from "../components/bubble"
-import Responses from "../components/responses"
-import Footer from "../components/footer"
+import SocialIcons from "../components/socialIcons"
+import Container from "../components/container"
 
 import "./layout.css"
-import { motion, AnimatePresence } from "framer-motion"
 
-const Layout = ({ children, pageContext, location }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout = ({ children, pageContext }) => {
   return (
     <>
       <SEO title={pageContext.frontmatter && pageContext.frontmatter.title} />
-      <div
+      <main style={{ minHeight: "100vh" }}>
+        <Container style={{ paddingTop: "10vh" }}>{children}</Container>
+      </main>
+      <nav
         style={{
-          margin: `0 auto`,
-          maxWidth: "40em",
-          minHeight: "100vh",
-          position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-end",
+          background: "#272727",
+          position: `sticky`,
+          bottom: "0",
         }}
       >
-        <AnimatePresence exitBeforeEnter>
-          <main
-            key={location.pathname}
+        <Container
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <Link
+            to="/"
+          >
+            Home
+          </Link>
+          <Link
+            to="/press"
+          >
+            Press Info
+          </Link>
+          <Link
+            to="/paid"
+          >
+            Paid Stuff
+          </Link>
+          <Link
+            to="/free"
+          >
+            Free Stuff
+          </Link>
+        </Container>
+      </nav>
+      <footer
+        style={{
+          background: `#272727`,
+        }}
+      >
+        <Container style={{ paddingTop: "0" }}>
+          <p>
+            The opinions expressed herein are my own personal opinions and do
+            not represent my employer's view in any way.
+          </p>
+          <div
             style={{
-              width: "100%",
-              padding: "2em 1em",
+              paddingBottom: "1rem",
+              display: "flex",
+              justifyContent: "space-between",
             }}
           >
-            <Bubble>{children}</Bubble>
-            <Responses
-              links={pageContext.frontmatter && pageContext.frontmatter.links}
-            />
-            {pageContext.frontmatter && pageContext.frontmatter.image && (
-              <motion.div
-                initial={{ opacity: 0, y: "15em" }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                exit={{
-                  opacity: 0,
-                  y: "15em",
-                }}
-                transition={{
-                  type: "tween",
-                  duration: 0.2,
-                }}
-                style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: "-3em",
-                  width: "15em",
-                  zIndex: "-1",
-                }}
-              >
-                <Image filename={pageContext.frontmatter.image} />
-              </motion.div>
-            )}
-          </main>
-        </AnimatePresence>
-      </div>
-      <Footer siteTitle={data.site.siteMetadata.title} />
+            <p>© {new Date().getFullYear()}, Luke Willis</p> <SocialIcons />
+          </div>
+          <p style={{ textAlign: "center" }}>👋</p>
+        </Container>
+      </footer>
     </>
   )
 }

@@ -11,11 +11,13 @@ const Submit = ({ children, style }) => (
       scale: 0.9,
     }}
     style={{
-      borderWidth: 0,
+      borderWidth: ".2em",
+      borderColor: "white",
+      borderRadius: "1em",
       padding: ".5em",
-      color: "rebeccapurple",
       fontWeight: "900",
-      backgroundColor: "white",
+      backgroundColor: "#121212",
+      color: "white",
       ...style,
     }}
   >
