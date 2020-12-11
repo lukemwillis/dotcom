@@ -1,0 +1,205 @@
+---
+title: City Maze
+---
+
+import Maze from "../../components/maze"
+
+<Maze
+    start={{ x: 1 }}
+    finish={{ x: 3 }}
+    grid={[
+        [
+            {
+                arrows: ['S', 'E'],
+                lines: [
+                    'SE'
+                ]
+            },
+            {
+                arrows: ['S', 'W'],
+                lines: [
+                    'SE',
+                    'SW',
+                    'EW'
+                ]
+            },
+            {
+                arrows: ['S', 'E', 'W'],
+                lines: [
+                    'SE',
+                    'SW',
+                    'EW'
+                ]
+            },
+            {
+                arrows: ['N', 'E', 'W'],
+                lines: [
+                    'NS',
+                    'EW'
+                ]
+            },
+            {
+                arrows: ['S', 'W'],
+                lines: [
+                    'SW'
+                ]
+            }
+        ],
+        [
+            {
+                arrows: ['N', 'S', 'E'],
+                lines: [
+                    'NS',
+                    'NE'
+                ]
+            },
+            {
+                arrows: ['N', 'S', 'E', 'W'],
+                lines: [
+                    'SE',
+                    'SW',
+                    'EW',
+                    'NE'
+                ]
+            },
+            {
+                arrows: ['N', 'S', 'E', 'W'],
+                lines: [
+                    'SE',
+                    'SW',
+                    'EW',
+                    'NS'
+                ]
+            },
+            {
+                arrows: ['N', 'S', 'E', 'W'],
+                lines: [
+                    'NS',
+                    'EW'
+                ]
+            },
+            {
+                arrows: ['N', 'S', 'W'],
+                lines: [
+                    'NW',
+                    'NS'
+                ]
+            }
+        ],
+        [
+            {
+                arrows: ['N', 'E'],
+                lines: [
+                    'SE',
+                    'NS',
+                    'NE'
+                ]
+            },
+            {
+                arrows: ['N', 'S', 'E', 'W'],
+                lines: [
+                    'NS',
+                    'SW',
+                    'NW',
+                    'EW'
+                ]
+            },
+            {
+                arrows: ['N', 'W'],
+                lines: [
+                    'NW',
+                    'EW'
+                ]
+            },
+            {
+                arrows: ['N', 'S', 'E', 'W'],
+                lines: [
+                    'NS',
+                    'EW',
+                    'SE'
+                ]
+            },
+            {
+                arrows: ['N', 'S', 'W'],
+                lines: [
+                    'NS',
+                    'SW'
+                ]
+            }
+        ],
+        [
+            {
+                arrows: ['N', 'S', 'E'],
+                lines: [
+                    'NS',
+                    'NE',
+                    'SE'
+                ]
+            },
+            {
+                arrows: ['N', 'S', 'E', 'W'],
+                lines: [
+                    'NS',
+                    'EW'
+                ]
+            },
+            {
+                arrows: ['E', 'W'],
+                lines: [
+                    'EW'
+                ]
+            },
+            {
+                arrows: ['N', 'S', 'E', 'W'],
+                lines: [
+                    'NS',
+                    'EW',
+                    'NW'
+                ]
+            },
+            {
+                arrows: ['N', 'W'],
+                lines: [
+                    'SW',
+                    'NW',
+                    'NS'
+                ]
+            }
+        ],
+        [
+            {
+                arrows: ['N', 'E'],
+                lines: [
+                    'NE'
+                ]
+            },
+            {
+                arrows: ['N', 'E', 'W'],
+                lines: [
+                    'NS',
+                    'EW'
+                ]
+            },
+            {
+                arrows: ['E', 'W'],
+                lines: [
+                    'EW'
+                ]
+            },
+            {
+                arrows: ['E', 'W'],
+                lines: [
+                    'NE',
+                    'NW',
+                    'EW'
+                ]
+            },
+            {
+                arrows: ['N'],
+                lines: [
+                    'NW'
+                ]
+            }
+        ]
+    ]}
+/>
