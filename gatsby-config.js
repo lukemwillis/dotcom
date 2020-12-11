@@ -5,6 +5,7 @@ module.exports = {
     author: `@lukemwillis`,
     linkedinUsername: "lukemwillis",
     stackOverflowUserId: "2479481",
+    twitterUsername: "lukemwillis",
   },
   plugins: [
     {

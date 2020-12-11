@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { FaStackOverflow, FaLinkedinIn } from "react-icons/fa"
+import { FaStackOverflow, FaLinkedinIn, FaTwitter } from "react-icons/fa"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const SocialIcons = () => {
@@ -31,6 +31,12 @@ const SocialIcons = () => {
         style={{ marginLeft: "0.5em" }}
       >
         <FaStackOverflow size="1.5rem" />
+      </OutboundLink>
+      <OutboundLink
+        href={`https://twitter.com/${siteMetadata.twitterUsername}`}
+        style={{ marginLeft: "0.5em" }}
+      >
+        <FaTwitter size="1.5rem" />
       </OutboundLink>
     </div>
   )
