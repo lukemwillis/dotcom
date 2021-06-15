@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { FaStackOverflow, FaLinkedinIn } from "react-icons/fa"
+import { FaStackOverflow, FaLinkedinIn, FaTwitter } from "react-icons/fa"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const SocialIcons = () => {
@@ -23,15 +23,20 @@ const SocialIcons = () => {
     <div>
       <OutboundLink
         href={`https://linkedin.com/in/${siteMetadata.linkedinUsername}`}
-        style={{ color: "white" }}
       >
-        <FaLinkedinIn size="2.25rem" />
+        <FaLinkedinIn size="1.5rem" />
       </OutboundLink>
       <OutboundLink
         href={`https://stackoverflow.com/users/story/${siteMetadata.stackOverflowUserId}`}
-        style={{ marginLeft: "0.5em", color: "white" }}
+        style={{ marginLeft: "0.5em" }}
       >
-        <FaStackOverflow size="2.25rem" />
+        <FaStackOverflow size="1.5rem" />
+      </OutboundLink>
+      <OutboundLink
+        href={`https://twitter.com/${siteMetadata.twitterUsername}`}
+        style={{ marginLeft: "0.5em" }}
+      >
+        <FaTwitter size="1.5rem" />
       </OutboundLink>
     </div>
   )

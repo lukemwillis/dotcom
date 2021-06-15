@@ -1,8 +1,8 @@
 import React from "react"
 
-const Form = ({ children, style }) => (
+const Form = ({ name, children, style }) => (
   <form
-    name="contact"
+    name={ name }
     method="POST"
     netlify-honeypot="bot-field"
     data-netlify="true"

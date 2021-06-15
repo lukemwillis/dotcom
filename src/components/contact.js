@@ -7,6 +7,7 @@ import Textarea from "./form/textarea"
 
 const Contact = () => (
   <Form
+    name="contact"
     style={{
       display: "grid",
       gridGap: "0.5em",
